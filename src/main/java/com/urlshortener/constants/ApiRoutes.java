@@ -16,8 +16,7 @@ public final class ApiRoutes {
     public static final String URL_INFO_PATH_VARIABLE = "shortCode";
     
     // Redirect endpoint
-    public static final String REDIRECT_BASE = "/r";
-    public static final String REDIRECT_URL = REDIRECT_BASE + "/{shortCode}";
+    public static final String REDIRECT_URL = "/{" + URL_INFO_PATH_VARIABLE + "}";
     
     // Private constructor to prevent instantiation
     private ApiRoutes() {

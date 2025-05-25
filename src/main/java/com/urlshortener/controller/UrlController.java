@@ -86,7 +86,7 @@ public class UrlController {
     private UrlResponse buildUrlResponse(Url url, String baseUrl) {
         return UrlResponse.builder()
                 .originalUrl(url.getOriginalUrl())
-                .shortUrl(baseUrl + ApiRoutes.REDIRECT_BASE + "/" + url.getShortCode())
+                .shortUrl(baseUrl + "/" + url.getShortCode())
                 .shortCode(url.getShortCode())
                 .createdAt(url.getCreatedAt())
                 .hitCount(url.getHitCount())
