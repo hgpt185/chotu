@@ -1,5 +1,6 @@
 package com.urlshortener.controller;
 
+import com.urlshortener.constants.ApiRoutes;
 import com.urlshortener.exception.UrlNotFoundException;
 import com.urlshortener.service.UrlService;
 import lombok.RequiredArgsConstructor;
@@ -31,8 +32,8 @@ public class RedirectController {
      * Returns a 302 redirect response to the original URL
      * Also increments the hit count
      */
-    @GetMapping("/r/{shortCode}")
-    public ResponseEntity<Void> redirect(@PathVariable String shortCode) {
+    @GetMapping(ApiRoutes.REDIRECT_URL)
+    public ResponseEntity<Void> redirect(@PathVariable(ApiRoutes.URL_INFO_PATH_VARIABLE) String shortCode) {
         log.info("Redirecting short code: {}", shortCode);
         
         try {

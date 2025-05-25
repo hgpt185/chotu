@@ -1,5 +1,6 @@
 package com.urlshortener.controller;
 
+import com.urlshortener.constants.ApiRoutes;
 import com.urlshortener.dto.UrlRequest;
 import com.urlshortener.dto.UrlResponse;
 import com.urlshortener.entity.Url;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  * @CrossOrigin - Allows cross-origin requests (for frontend integration)
  */
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping(ApiRoutes.API_BASE_PATH)
 @RequiredArgsConstructor
 @Slf4j
 @CrossOrigin(origins = "*")
@@ -65,9 +66,10 @@ public class UrlController {
      * @GetMapping - Handles HTTP GET requests
      * @PathVariable - Extracts value from URL path
      */
-    @GetMapping("/url/{shortCode}")
-    public ResponseEntity<UrlResponse> getUrlInfo(@PathVariable String shortCode,
-                                                  HttpServletRequest httpRequest) {
+    @GetMapping("/url/{" + ApiRoutes.URL_INFO_PATH_VARIABLE + "}")
+    public ResponseEntity<UrlResponse> getUrlInfo(
+            @PathVariable(ApiRoutes.URL_INFO_PATH_VARIABLE) String shortCode,
+            HttpServletRequest httpRequest) {
         
         log.info("Getting info for short code: {}", shortCode);
         
@@ -84,7 +86,7 @@ public class UrlController {
     private UrlResponse buildUrlResponse(Url url, String baseUrl) {
         return UrlResponse.builder()
                 .originalUrl(url.getOriginalUrl())
-                .shortUrl(baseUrl + "/r/" + url.getShortCode())
+                .shortUrl(baseUrl + ApiRoutes.REDIRECT_BASE + "/" + url.getShortCode())
                 .shortCode(url.getShortCode())
                 .createdAt(url.getCreatedAt())
                 .hitCount(url.getHitCount())
