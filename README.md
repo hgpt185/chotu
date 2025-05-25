@@ -1,8 +1,41 @@
 # URL Shortener - Spring Boot Backend
 
-A URL shortener service built with Spring Boot, demonstrating core Spring Boot concepts and best practices.
+![Java](https://img.shields.io/badge/Java-17-orange.svg)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2.0-brightgreen.svg)
+![Maven](https://img.shields.io/badge/Maven-3.6+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## Features
+A URL shortener service built with Spring Boot, demonstrating core Spring Boot concepts and best practices. This project serves as an educational example for learning Spring Boot fundamentals through a practical application.
+
+## 📋 Table of Contents
+
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Quick Start](#quick-start)
+- [API Documentation](#api-endpoints)
+- [Configuration](#configuration)
+- [Learning Resources](#learning-resources)
+- [Contributing](#contributing)
+- [License](#license)
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/url-shortener.git
+cd url-shortener
+
+# Build the project
+mvn clean install
+
+# Run the application
+mvn spring-boot:run
+
+# The application will start on http://localhost:8080
+```
+
+## ✨ Features
 
 - **Shorten Long URLs**: Convert long URLs into short, unique codes
 - **Redirect to Original URL**: Redirect users to the original URL when they visit the short link
@@ -11,7 +44,7 @@ A URL shortener service built with Spring Boot, demonstrating core Spring Boot c
 - **Validation**: Validate input URLs to ensure proper format
 - **Unique Code Generation**: Generate non-colliding, unique short codes
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 - **Spring Boot 3.2.0**: Framework for building Java applications
 - **Spring Data JPA**: For database operations
@@ -19,7 +52,7 @@ A URL shortener service built with Spring Boot, demonstrating core Spring Boot c
 - **Lombok**: To reduce boilerplate code
 - **Maven**: Dependency management
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 url-shortener/
@@ -46,7 +79,7 @@ url-shortener/
 └── pom.xml                            # Maven configuration
 ```
 
-## Key Spring Boot Concepts Demonstrated
+## 📚 Key Spring Boot Concepts Demonstrated
 
 1. **Dependency Injection**: Constructor-based injection using `@RequiredArgsConstructor`
 2. **REST API**: Using `@RestController`, `@RequestMapping`, `@GetMapping`, `@PostMapping`
@@ -57,7 +90,7 @@ url-shortener/
 7. **DTOs**: Data Transfer Objects for API request/response
 8. **Logging**: Using SLF4J with Lombok's `@Slf4j`
 
-## Running the Application
+## 🏃‍♂️ Running the Application
 
 1. **Prerequisites**
    - Java 17 or higher
@@ -80,7 +113,7 @@ url-shortener/
      - Username: `sa`
      - Password: (leave blank)
 
-## API Endpoints
+## 📡 API Endpoints
 
 ### 1. Shorten URL
 **POST** `/api/v1/shorten`
@@ -122,7 +155,7 @@ Response:
 
 Returns: 302 Redirect to the original URL
 
-## Testing the API
+## 🧪 Testing the API
 
 ### Using cURL
 
@@ -149,7 +182,7 @@ Returns: 302 Redirect to the original URL
 2. Set the Content-Type header to `application/json`
 3. Add the request body with your URL
 
-## Database Schema
+## 🗄️ Database Schema
 
 The application automatically creates the following table:
 
@@ -163,7 +196,7 @@ CREATE TABLE urls (
 );
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 The application can be configured through `application.properties`:
 
@@ -172,7 +205,7 @@ The application can be configured through `application.properties`:
 - `spring.jpa.hibernate.ddl-auto`: Database schema generation strategy
 - `spring.h2.console.enabled`: Enable/disable H2 console
 
-## Future Enhancements
+## 🔮 Future Enhancements
 
 - Add expiration dates for URLs
 - Implement custom short codes
@@ -182,12 +215,22 @@ The application can be configured through `application.properties`:
 - Implement analytics dashboard
 - Support for QR code generation
 
-## Learning Resources
+## 📖 Learning Resources
 
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 - [Spring Data JPA Reference](https://spring.io/projects/spring-data-jpa)
 - [Building REST APIs with Spring](https://spring.io/guides/tutorials/rest/)
 
-## License
+## 🤝 Contributing
 
-This project is created for educational purposes.
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
